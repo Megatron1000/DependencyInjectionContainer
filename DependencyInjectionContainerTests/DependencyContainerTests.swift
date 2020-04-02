@@ -15,7 +15,7 @@ final class DependencyInjectionContainerTests: XCTestCase {
         let dependencyContainer = DependencyContainer()
         dependencyContainer.register { RealService() as Service }
         dependencyContainer.register { RealClient() as Client }
-        
+
         let service: Service = dependencyContainer.resolve()
         let client: Client = dependencyContainer.resolve()
 
@@ -26,13 +26,13 @@ final class DependencyInjectionContainerTests: XCTestCase {
     func testRegisteringOverwritesPreviousRegistration() {
         let dependencyContainer = DependencyContainer()
         dependencyContainer.register { RealService() as Service }
-        
+
         dependencyContainer.register { MockService() as Service }
 
         let service: Service = dependencyContainer.resolve()
         XCTAssert(service is MockService)
     }
-    
+
     func testCircularDependency() {
         let dependencyContainer = DependencyContainer()
         dependencyContainer.register { ServiceClient(service: LazilyResolvedPropertyWrapper<Service>(dependencyContainer: dependencyContainer)) as Client }
@@ -40,19 +40,18 @@ final class DependencyInjectionContainerTests: XCTestCase {
 
         let service: Service = dependencyContainer.resolve()
         let client: Client = dependencyContainer.resolve()
-        
+
         let clientService = service as? ClientService
         let serviceClient = client as? ServiceClient
-        
+
         XCTAssertNotNil(clientService)
         XCTAssertNotNil(serviceClient)
 
         XCTAssert(clientService?.client is ServiceClient)
         XCTAssert(serviceClient?.service.value is ClientService)
     }
-    
-}
 
+}
 
 // MARK: Service Stubs
 
@@ -62,7 +61,6 @@ class RealService: Service {}
 
 class MockService: Service {}
 
-
 // MARK: Client Stubs
 
 protocol Client: class {}
@@ -70,7 +68,6 @@ protocol Client: class {}
 class RealClient: Client {}
 
 class MockClient: Client {}
-
 
 // MARK: Circular Dependency Stubs
 

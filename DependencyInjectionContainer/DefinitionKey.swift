@@ -9,15 +9,15 @@
 import Foundation
 
 struct DefinitionKey: Hashable {
-    
+
     let type: Any.Type
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(type))
     }
-    
+
     static func ==(lhs: DefinitionKey, rhs: DefinitionKey) -> Bool {
         return lhs.type == rhs.type
     }
-    
+
 }

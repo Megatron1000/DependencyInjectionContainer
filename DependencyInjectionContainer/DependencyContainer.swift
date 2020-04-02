@@ -13,11 +13,11 @@ import Foundation
 /// LifeCycle options i.e. singletons rather than everything being transient
 /// Runtime arguments
 public final class DependencyContainer {
-        
-    private var dependencies = [DefinitionKey : ()->Any]()
-    
-    public init(){}
-    
+
+    private var dependencies = [DefinitionKey: ()->Any]()
+
+    public init() {}
+
     /// Provide a constructor to be used whenever an instance of T is resolved
     /// - Parameter factory: The constructor
     ///
@@ -26,11 +26,11 @@ public final class DependencyContainer {
     ///    DefaultExampleService() as ExampleService
     /// }
     /// ```
-    public func register<T>(factory: @escaping ()->T) {
+    public func register<T>(factory: @escaping () -> T) {
         let key = DefinitionKey(type: T.self)
         dependencies[key] = factory
     }
-        
+
     /// Resolve an instance of type `T`.
     /// - Returns: An instance of type `T`.
     ///

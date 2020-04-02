@@ -20,6 +20,7 @@
 		AB378E25243600CD004C4AA2 /* ExampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB378E24243600CD004C4AA2 /* ExampleService.swift */; };
 		AB378E2724360109004C4AA2 /* DefaultExampleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB378E2624360109004C4AA2 /* DefaultExampleService.swift */; };
 		AB378E2924360FA0004C4AA2 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB378E2824360FA0004C4AA2 /* DependencyContainerTests.swift */; };
+		AB378E2D24363C8C004C4AA2 /* LazilyResolvedPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB378E2C24363C8C004C4AA2 /* LazilyResolvedPropertyWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		AB378E24243600CD004C4AA2 /* ExampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleService.swift; sourceTree = "<group>"; };
 		AB378E2624360109004C4AA2 /* DefaultExampleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExampleService.swift; sourceTree = "<group>"; };
 		AB378E2824360FA0004C4AA2 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
+		AB378E2C24363C8C004C4AA2 /* LazilyResolvedPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazilyResolvedPropertyWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				AB378DE82435F793004C4AA2 /* Info.plist */,
 				AB378E1C2435F9FE004C4AA2 /* DependencyContainer.swift */,
 				AB378E202435FB49004C4AA2 /* DefinitionKey.swift */,
+				AB378E2C24363C8C004C4AA2 /* LazilyResolvedPropertyWrapper.swift */,
 			);
 			path = DependencyInjectionContainer;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB378E1D2435F9FE004C4AA2 /* DependencyContainer.swift in Sources */,
+				AB378E2D24363C8C004C4AA2 /* LazilyResolvedPropertyWrapper.swift in Sources */,
 				AB378E212435FB49004C4AA2 /* DefinitionKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

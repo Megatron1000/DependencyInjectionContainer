@@ -9,7 +9,7 @@
 import XCTest
 @testable import DependencyInjectionContainer
 
-class DependencyInjectionContainerTests: XCTestCase {
+final class DependencyInjectionContainerTests: XCTestCase {
 
     func testRegisterThenResolve() {
         let dependencyContainer = DependencyContainer()

@@ -8,15 +8,21 @@
 
 import Foundation
 
+/// Use this class to when you find yourself in a situations where ClassA depends on ClassB and ClassB also depends on ClassA.
+/// This defers `resolve()` being called until the first access of the `value`. Preventing the infinite recursion you'd otherwise encounter
 final public class LazilyResolvedPropertyWrapper<T> {
     
     weak private var dependencyContainer: DependencyContainer?
     
-    init(dependencyContainer: DependencyContainer?) {
+    /// Init
+    /// - Parameter dependencyContainer: The app's central DependencyContainer
+    init(dependencyContainer: DependencyContainer) {
         self.dependencyContainer = dependencyContainer
     }
     
+    /// The value that resolves as `T` using the `DependencyContainer`
     var value: T {
+        // We only want to resolve once.
         if let previouslyResolvedValue = previouslyResolvedValue {
             return previouslyResolvedValue
         }
